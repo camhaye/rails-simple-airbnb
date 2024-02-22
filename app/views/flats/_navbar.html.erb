@@ -1,0 +1,10 @@
+<nav style="z-index:99999; position: sticky; top: 0; width: 100%;background-color:#f1f1f1" class="p-1 navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <%= link_to "Airbnb", flats_path, class: "navbar-brand" %>
+      <form class="d-flex" role="search">
+      <input name="number_of_guests" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <%= link_to "Add your own flat!", new_flat_path, class: "navbar-brand" %>
+  </div>
+</nav>

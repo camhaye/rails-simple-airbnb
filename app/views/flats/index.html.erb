@@ -1,0 +1,28 @@
+<%= render "navbar" %>
+<div class="container p-2" style="display:flex;flex-wrap:wrap">
+  <h1 style="width:100%">Airbnb</h1>
+
+  <h2 style="width:100%">See all flats</h2>
+
+  <% @flats.each do |flat| %>
+    <div class="card m-1" style="width: 18rem;">
+      <img src="<%= flat.picture_url %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p>
+            <%= flat.description %></br>
+            <%= flat.number_of_guests %><i class="fa-solid fa-users"></i>
+            <%= flat.price_per_night %><i class="fa-solid fa-euro-sign"></i>
+          </p>
+          <div class="card-body">
+            <%= link_to "More info", flat_path(flat)%>
+            <%= link_to "Edit", edit_flat_path(flat)%>
+            <%= link_to "Delete", flat_path(flat), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" } %>
+          </div>
+      </div>
+    </div>
+<% end %>
+</div>
+
+
+<%  %>
